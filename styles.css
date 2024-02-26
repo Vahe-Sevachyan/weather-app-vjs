@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+  font-family: "Courier New", Courier, monospace;
 }
 body {
   background: #222;
@@ -15,14 +16,60 @@ body {
   text-align: center;
 }
 .search input {
-  border: 0;
-  outline: 0;
+  border: none;
+  outline: none;
   background: #ebfffc;
   color: #555;
   padding: 10px 25px;
-  height: 30px;
+  height: 35px;
   border-radius: 30px;
   flex: 1;
   margin-right: 16px;
   font-size: 18px;
+}
+.search button {
+  border: none;
+  outline: none;
+  background: #ebfffc;
+  border-radius: 10%;
+  padding: 8px;
+  cursor: pointer;
+}
+.search button:hover {
+  background-color: #00feba;
+  transition: 1s ease-in-out;
+}
+.weather-icon {
+  width: 170px;
+  margin-top: 30px;
+}
+.weather h1 {
+  font-size: 80px;
+  font-weight: 500;
+}
+.weather h2 {
+  font-size: 45px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+.col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+.col img {
+  width: 40px;
+  margin-right: 10px;
+}
+.humidity,
+.wind {
+  font-size: 25px;
+  margin-top: -12px;
 }
