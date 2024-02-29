@@ -11,6 +11,10 @@ async function checkWeather(city) {
   if (data) {
     foreCastDisplay();
   }
+  console.log(response.status);
+  if (response.status === 400) {
+    document.querySelector(".error-message").style.display = "block";
+  }
   console.log(data);
   document.querySelector(".city").innerHTML = data.name;
   document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
@@ -49,4 +53,4 @@ searchBtn.addEventListener("click", () => {
   checkWeather(searchField.value);
 });
 
-function foreCastImg(weather) {}
+// function foreCastImg() {}
