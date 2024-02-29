@@ -76,9 +76,10 @@ body {
 .wind {
   font-size: 25px;
 }
-/* .temp,
-.city,
-.foreCastImg,
-.col {
+.temp,
+.city {
+  font-size: 30px;
+}
+.weather {
   display: none;
-} */
+}

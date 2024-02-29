@@ -8,14 +8,15 @@ const forecastImg = document.querySelector(".foreCastImg");
 async function checkWeather(city) {
   const response = await fetch(apiURL + city + `&appid=${apiKey}`);
   const data = await response.json();
-  // if (data) {
-  //   foreCastDisplay();
-  // }
+  if (data) {
+    foreCastDisplay();
+  }
   console.log(data);
   document.querySelector(".city").innerHTML = data.name;
   document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°c";
   document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
   document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+  searchField.value = "";
   console.log(data.weather[0].main);
 
   // foreCastImg(data.weather[0].main);
@@ -41,10 +42,7 @@ async function checkWeather(city) {
 
 function foreCastDisplay() {
   document.querySelector(".placeholder-message").style.display = "none";
-  document.querySelector(".temp").style.display = "init";
-  document.querySelector(".city").style.display = "init";
-  document.querySelector(".foreCastImg").style.display = "init";
-  document.querySelector(".col").style.display = "init";
+  document.querySelector(".weather").style.display = "block";
 }
 
 searchBtn.addEventListener("click", () => {
