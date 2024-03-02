@@ -7,12 +7,15 @@ const searchField = document.querySelector(".searchField");
 const forecastImg = document.querySelector(".foreCastImg");
 async function checkWeather(city) {
   const response = await fetch(apiURL + city + `&appid=${apiKey}`);
+  console.log(response)
   const data = await response.json();
-  if (data) {
-    foreCastDisplay();
-  }
+  // if (data) {
+  //   foreCastDisplay();
+  // }
   console.log(response.status);
-  if (response.status === 400) {
+  if (response.status === 200) {
+    foreCastDisplay();
+  }else if(response.status !== 200){
     document.querySelector(".error-message").style.display = "block";
   }
   console.log(data);
