@@ -15,8 +15,11 @@ async function checkWeather(city) {
   console.log(response.status);
   if (response.status === 200) {
     foreCastDisplay();
+    forecastImg.style.visibility = 'visible'
+    document.querySelector(".error-message").style.display = "none"
   }else if(response.status !== 200){
     document.querySelector(".error-message").style.display = "block";
+    forecastImg.style.visibility = 'hidden'
   }
   console.log(data);
   document.querySelector(".city").innerHTML = data.name;
