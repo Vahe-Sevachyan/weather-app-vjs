@@ -16,10 +16,19 @@ async function checkWeather(city) {
   if (response.status === 200) {
     foreCastDisplay();
     forecastImg.style.visibility = 'visible'
+    document.querySelector('.temp').style.visibility='visible';
+    document.querySelector('.city').style.visibility='visible';
+    document.querySelector('.col').style.visibility='visible';
+    document.querySelector('#col2').style.visibility='visible';
     document.querySelector(".error-message").style.display = "none"
   }else if(response.status !== 200){
     document.querySelector(".error-message").style.display = "block";
     forecastImg.style.visibility = 'hidden'
+    document.querySelector('.temp').style.visibility='hidden';
+    document.querySelector('.city').style.visibility='hidden';
+    document.querySelector('.col').style.visibility='hidden';
+    document.querySelector('#col2').style.visibility='hidden';
+    // document.querySelector('.card').style.height = '170px'
   }
   console.log(data);
   document.querySelector(".city").innerHTML = data.name;
